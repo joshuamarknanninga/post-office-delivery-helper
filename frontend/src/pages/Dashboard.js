@@ -3,6 +3,7 @@ import { Container, Header, Button, Table } from 'semantic-ui-react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
     width: '100%',
@@ -45,6 +46,16 @@ const Dashboard = () => {
             alert('Error updating delivery');
         }
     };
+    const exportToCSV = () => {
+        const delivered = deliveries.filter(delivery => delivery.status === 'delivered');
+        const worksheet = XLSX.utils.json_to_sheet(delivered);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Delivered');
+        XLSX.writeFile(workbook, 'deliveries.csv');
+    };
+    <Button color="blue" onClick={exportToCSV} style={{ marginTop: '20px' }}>
+        Export Delivered to CSV
+    </Button>
 
     if (loadError) return 'Error loading maps';
     if (!isLoaded) return 'Loading Maps';
