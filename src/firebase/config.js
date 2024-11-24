@@ -4,12 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-  projectId: "YOUR_FIREBASE_PROJECT_ID",
-  storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_FIREBASE_SENDER_ID",
-  appId: "YOUR_FIREBASE_APP_ID"
+    apiKey: "AIzaSyCwa4GNm-jEwyRX-N4ZQeZBYLxAHV8TVVQ",
+    authDomain: "post-office-delivery-helper.firebaseapp.com",
+    projectId: "post-office-delivery-helper",
+    storageBucket: "post-office-delivery-helper.firebasestorage.app",
+    messagingSenderId: "538183543199",
+    appId: "1:538183543199:web:04c48868fd868c376175aa",
+    measurementId: "G-X2Q5L7DN3H"
 };
 
 // Initialize Firebase
